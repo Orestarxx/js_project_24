@@ -1,0 +1,35 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+
+}
+nav{
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.user{
+    width: 240px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    flex-direction: column;
+    margin-top: 40px;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 20px;
+}
+.detailsButton{
+    margin-top: 10px;
+    width: 150px;
+    height: 25px;
+    font-size: 20px;
+}

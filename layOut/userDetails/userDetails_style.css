@@ -1,0 +1,22 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    width: 100%;
+}
+.showPosts{
+    width: 100%;
+    height: 300px;
+    border: 1px solid;
+}
+.hidePosts{
+    display: none;
+}
+a{
+    text-decoration: none;
+}
+button{
+    width: 90%;
+}
