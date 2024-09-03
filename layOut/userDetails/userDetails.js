@@ -5,20 +5,23 @@ const userDetails = new URL(location.href);
      users: 'users',
      posts: 'posts'
  };
-let {users,posts} = endPoints
 console.log(user);
-
+let {users,posts} = endPoints
 let section = document.getElementsByTagName('section')[0];
-for (const key in user) {
- let userInfo = document.createElement('div');
- userInfo.innerHTML =`${key}:${user[key]}`
-
+let userInfo = document.createElement('div');
+userInfo.innerHTML =`
+id:${user.id}\n\
+email: ${user.email}
+name:${user.name} 
+phone:${user.phone} 
+username:${user.username}
+website:${user.website}
+address:${user.address.city}`;
 section.append(userInfo)
-}
+
  let postsButton = document.getElementById('postsButton');
  let postsHolder = document.getElementsByClassName('showPosts')[0];
  let listOfPosts = document.getElementById('listOfPosts');
-
    postsButton.onclick = function () {
        postsHolder.classList.toggle('hidePosts')
    }
@@ -30,11 +33,10 @@ section.append(userInfo)
          postA.href =`../postDetails/postDetails.html?data=${JSON.stringify(post)}`;
          postA.target = '_blank';
          let postLi = document.createElement('li');
+         postLi.classList.add('post');
          postLi.innerText = post.title;
          postA.append(postLi);
          listOfPosts.append(postA);
      }
-
-
  }
 userPosts(user.id)

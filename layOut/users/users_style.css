@@ -20,7 +20,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #050536;
+    border: 1px solid white;
     flex-direction: column;
     margin-top: 40px;
     border-radius: 10px;
@@ -54,7 +54,7 @@ video{
     font-size: 17px;
     border-radius: 6px;
     font-weight: 500;
-    color: var(--color);
+    color: black;
 }
 
 .detailsButton:before {
@@ -83,7 +83,7 @@ video{
 }
 
 .detailsButton:active:before {
-    background: #3a0ca3;
+    background: #050536;
     transition: background 0s;
 }
 .user:nth-child(odd){
