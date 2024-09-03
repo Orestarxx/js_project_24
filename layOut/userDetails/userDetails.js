@@ -5,25 +5,26 @@ const userDetails = new URL(location.href);
      users: 'users',
      posts: 'posts'
  };
-console.log(user);
-let {users,posts} = endPoints
+let {users,posts} = endPoints;
 let section = document.getElementsByTagName('section')[0];
-let userInfo = document.createElement('div');
-userInfo.innerHTML =`
-id:${user.id}\n\
-email: ${user.email}
-name:${user.name} 
-phone:${user.phone} 
-username:${user.username}
-website:${user.website}
-address:${user.address.city}`;
-section.append(userInfo)
+console.log(user);
 
+ function userDetailsBuilder(object) {
+     for (const objectKey in object) {
+         if(typeof object[objectKey] === 'object'){
+             userDetailsBuilder(object[objectKey]);
+         }else{
+             let divInfo = document.createElement('div');
+             divInfo.innerHTML = `${objectKey}:<span class="userDetails">${object[objectKey]}</span>`;
+            section.append(divInfo);
+         }
+     }
+ }
+ userDetailsBuilder(user);
  let postsButton = document.getElementById('postsButton');
  let postsHolder = document.getElementsByClassName('showPosts')[0];
- let listOfPosts = document.getElementById('listOfPosts');
    postsButton.onclick = function () {
-       postsHolder.classList.toggle('hidePosts')
+       postsHolder.classList.toggle('hidePosts');
    }
  async function userPosts(userID) {
     let userPosts = await fetch(`${url}${users}/${userID}/${posts}`).then(response =>response.json());
@@ -32,11 +33,12 @@ section.append(userInfo)
          let postA = document.createElement('a');
          postA.href =`../postDetails/postDetails.html?data=${JSON.stringify(post)}`;
          postA.target = '_blank';
-         let postLi = document.createElement('li');
-         postLi.classList.add('post');
-         postLi.innerText = post.title;
-         postA.append(postLi);
-         listOfPosts.append(postA);
+         let postDiv = document.createElement('div');
+         postDiv.classList.add('postDiv');
+         postDiv.classList.add('post');
+         postDiv.innerText = post.title;
+         postA.append(postDiv);
+         postsHolder.append(postA);
      }
  }
-userPosts(user.id)
+userPosts(user.id);

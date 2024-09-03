@@ -12,26 +12,58 @@ main{
 }
 #userInformation{
     width: 90%;
-    height: 300px;
     border: 1px solid;
+    font-size: 20px;
+    margin-top: 10px;
+}
+.userDetails{
+    margin-left: 10px;
+    color: dodgerblue ;
 }
 .showPosts{
-    width: 90%;
-    height: 200px;
+    width: 70%;
+    display: flex;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.postDiv{
+    width: 600px;
+    height: 50px;
+    border: 1px solid black;
+    margin-top: 20px;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 30px;
+    font-size: 20px;
+    color: black;
+    border-radius: 5px;
 }
-ul{
-    list-style-type: none;
+.postDiv:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
+
 .hidePosts{
     display: none;
 }
 a{
     text-decoration: none;
 }
-button{
+button {
+    margin-top: 10px;
+    font-family: monospace;
+    background-color: #37435e;
+    color: #e2e4ea;
+    border: none;
+    border-radius: 8px;
     width: 90%;
+    height: 45px;
+    transition: .3s;
+}
+
+button:hover {
+    background-color: #3b82f6;
+    box-shadow: 0 0 0 5px #3b83f65f;
+    color: #fff;
 }
