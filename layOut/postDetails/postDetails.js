@@ -6,6 +6,13 @@ let endpoints = {
     posts:'/posts',
     comments:'/comments'
 };
+let infoPost = document.getElementById('postInfo');
+for (const postKey in post) {
+let postDiv = document.createElement('div');
+postDiv.innerText = `${postKey}:${post[postKey]}`;
+infoPost.append(postDiv);
+}
+
 let {posts,comments} = endpoints;
 async function printComments (postId) {
     let commentsOfPost = await fetch(`${url}${posts}/${postId}${comments}`).then(response =>response.json());

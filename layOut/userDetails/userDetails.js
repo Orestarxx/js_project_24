@@ -7,14 +7,13 @@ const userDetails = new URL(location.href);
  };
 let {users,posts} = endPoints;
 let section = document.getElementsByTagName('section')[0];
-console.log(user);
-
  function userDetailsBuilder(object) {
      for (const objectKey in object) {
          if(typeof object[objectKey] === 'object'){
              userDetailsBuilder(object[objectKey]);
          }else{
              let divInfo = document.createElement('div');
+             divInfo.classList.add('divInfo');
              divInfo.innerHTML = `${objectKey}:<span class="userDetails">${object[objectKey]}</span>`;
             section.append(divInfo);
          }
@@ -35,7 +34,6 @@ console.log(user);
          postA.target = '_blank';
          let postDiv = document.createElement('div');
          postDiv.classList.add('postDiv');
-         postDiv.classList.add('post');
          postDiv.innerText = post.title;
          postA.append(postDiv);
          postsHolder.append(postA);
