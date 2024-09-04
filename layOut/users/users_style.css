@@ -2,12 +2,13 @@
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
+    font-family: monospace;
 }
 body{
 
 }
 nav{
-    width: 600px;
+    width: 1300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,7 +16,7 @@ nav{
 
 }
 .user{
-    width: 240px;
+    width: 250px;
     height: 115px;
     display: flex;
     align-items: center;
@@ -24,8 +25,9 @@ nav{
     flex-direction: column;
     margin-top: 40px;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 16px;
     color: white;
+
 }
 
 video{
@@ -86,10 +88,10 @@ video{
     background: #050536;
     transition: background 0s;
 }
-.user:nth-child(odd){
+.user:nth-child(-n+5){
     animation: userLeft 1s linear;
 }
-.user:nth-child(even){
+.user:nth-child(n+6){
     animation: userRight 1s linear;
 }
 

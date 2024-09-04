@@ -24,10 +24,14 @@ let section = document.getElementsByTagName('section')[0];
  let postsHolder = document.getElementsByClassName('showPosts')[0];
    postsButton.onclick = function () {
        postsHolder.classList.toggle('hidePosts');
+       if (postsHolder.classList.value.includes('hidePosts')){
+              this.innerText = 'Show Posts';
+       }else{
+              this.innerText = 'Hide Posts';
+       }
    }
- async function userPosts(userID) {
+async function userPosts(userID) {
     let userPosts = await fetch(`${url}${users}/${userID}/${posts}`).then(response =>response.json());
-     console.log(userPosts);
      for (const post of userPosts) {
          let postA = document.createElement('a');
          postA.href =`../postDetails/postDetails.html?data=${JSON.stringify(post)}`;
