@@ -4,9 +4,6 @@
     box-sizing: border-box;
     font-family: monospace;
 }
-body{
-
-}
 nav{
     width: 1300px;
     display: flex;
@@ -29,7 +26,6 @@ nav{
     color: white;
 
 }
-
 video{
     filter: blur(5px);
     width: 100%;
@@ -58,7 +54,6 @@ video{
     font-weight: 500;
     color: black;
 }
-
 .detailsButton:before {
     content: "";
     position: absolute;
@@ -68,22 +63,18 @@ video{
     width: 200px;
     border-radius: 50%;
 }
-
 .detailsButton:hover {
     color: #fff;
 }
-
 .detailsButton:before {
     top: 100%;
     left: 100%;
     transition: all 0.7s;
 }
-
 .detailsButton:hover:before {
     top: -20px;
     left: -30px;
 }
-
 .detailsButton:active:before {
     background: #050536;
     transition: background 0s;
@@ -94,7 +85,6 @@ video{
 .user:nth-child(n+6){
     animation: userRight 1s linear;
 }
-
 @keyframes userLeft {
      0%{
      transform: translateX(-100px);
@@ -112,7 +102,6 @@ video{
     100%{
         transform: translateX(0px);
     }
-
 }
 @keyframes userRight {
     0%{
@@ -131,5 +120,4 @@ video{
     100%{
         transform: translateX(0px);
     }
-
 }

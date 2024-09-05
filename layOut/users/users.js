@@ -17,5 +17,4 @@ async function fetchUsers (pushedPlace) {
      pushedPlace.append(userDiv);
     }
 }
-
  fetchUsers(navigation);
