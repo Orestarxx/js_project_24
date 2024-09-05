@@ -1,9 +1,7 @@
 let url =  new URL('https://jsonplaceholder.typicode.com/');
  let navigation = document.getElementsByTagName('nav')[0];
-console.log(navigation);
-
 async function fetchUsers (pushedPlace) {
- const users = await fetch(`${url}users`).then(response => response.json())
+ const users = await fetch(`${url}users`).then(response => response.json());
     for (const user of users) {
      let userDiv = document.createElement('div');
      userDiv.classList.add('user');
